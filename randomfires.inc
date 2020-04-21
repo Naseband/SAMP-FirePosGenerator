@@ -27,6 +27,12 @@ stock GenerateFirePositions(num = MAX_FIRE_POS)
 
 	LoadVehNodes();
 
+	if(!CountVehNodes())
+	{
+		print("Error: Failed to load VehNodes.");
+		return 0;
+	}
+
 	new tries;
 
 	for(new i = 0; i < num; i ++)
