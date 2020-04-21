@@ -63,6 +63,14 @@ stock VehNodesLoaded()
 	return _:gVehNodesLoaded;
 }
 
+stock CountVehNodes()
+{
+	new count;
+	for(new i = 0; i < MAX_VEH_NODES; i ++) if(gVehNodes[i][Used]) count ++;
+
+	return count;
+}
+
 stock GetClosestVehNodeFromPoint(Float:x, Float:y, Float:z, Float:maxdist = 10000.0, except = -1)
 {
 	new id = -1, Float:tmp_dist, Float:dist = maxdist;
